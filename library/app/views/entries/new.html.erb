@@ -1,0 +1,28 @@
+<h1>Dodaj wpis, przegościu</h1>
+<%= form_for @entry do |f| %>
+  <% if @entry.errors.any? %>
+  <ul>
+    <% @entry.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+<p>
+  <%= f.label :name, "Nazwa przegościa:" %><br />
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :comment, "Przekomentarz:" %><br />
+  <%= f.text_area :comment %>
+</p>
+
+<p>
+  <%= f.label :avatar_url, "Avatar Przegościa (url)" %>
+  <%= f.text_field :avatar_url %>
+</p>
+
+  <%= f.submit "Przedodaj" %>
+  <%= link_to "Przewróć", root_path %>
+<% end %>
