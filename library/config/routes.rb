@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  #get 'entries/index'
+
+  #get 'entries/new'
+
+  #get 'entries/create'
+
+  resources :entries, only: [:index, :new, :create]
   resources :books
 
   resources :authors
@@ -7,7 +14,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'entries#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
